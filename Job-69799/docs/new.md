@@ -1,8 +1,6 @@
 # Software Requirements Specification
 
-## for
-
-# Invoice Finance dApp
+## for # Invoice Finance dApp
 
 Version 1.0 Approved
 Prepared by Saviour Uzoukwu
