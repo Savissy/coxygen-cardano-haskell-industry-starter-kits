@@ -10,7 +10,7 @@ Coxygen / Cardano Plutus Project
 ---
 
 # Table of Contents
-
+<!-- TOC -->
 1. Introduction  
    1.1 Purpose  
    1.2 Document Conventions  
@@ -61,7 +61,7 @@ Appendix B: Analysis Models
    B.1 Invoice Lifecycle  
    B.2 System Flow  
 Appendix C: Issues List  
-
+<!-- TOC -->
 ---
 
 # Revision History
