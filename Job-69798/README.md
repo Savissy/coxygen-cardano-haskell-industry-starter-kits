@@ -1,64 +1,73 @@
-Here’s a **clean, professional, GitHub-ready `README.md`** tailored for your **CoxyInsure DeFi Insurance dApp** — structured to look like a serious production project 👇
+Here’s a **clean, copy-paste ready `README.md`** with a proper **Mermaid architectural diagram included** 👇
 
 ---
 
-```md
+````md
 # 🛡️ CoxyInsure — Decentralized Insurance Protocol
 
-CoxyInsure is a **DeFi insurance protocol on Cardano** that enables users to:
-- Purchase insurance cover for on-chain risks
-- Submit and validate claims through governance
-- Participate in pooled liquidity for premium yield
-
-It combines **smart contracts (Plutus)** with a **full-stack web interface** and **admin governance system**.
+CoxyInsure is a **DeFi insurance dApp on Cardano** that allows users to:
+- Purchase insurance cover
+- Submit claims with evidence
+- Participate in governance voting
+- Receive payouts through smart contracts
 
 ---
 
 ## 🚀 Features
 
 ### 👤 User Features
-- 🔐 Wallet connection (Cardano wallets e.g. Lace)
-- 💰 Deposit ADA into insurance pool
-- 🛡️ Purchase insurance covers
-- 📄 Upload claim documents (with evidence)
-- 🗳️ Participate in governance voting
-- 📊 View claim status & history
+- 🔐 Connect Cardano wallet (Lace, etc.)
+- 💰 Deposit ADA into liquidity pool
+- 🛡️ Buy insurance cover
+- 📄 Upload claim documents
+- 🗳️ Vote on claims
+- 📊 Track claim status
 
 ---
 
 ### 🏦 Protocol Features
 - 💧 Shared liquidity pool
 - 📈 Premium-based yield system
-- ⚖️ Consensus-based claim validation
+- ⚖️ Decentralized claim validation
 - 🔄 On-chain claim execution
-- 🧾 Transaction logging (backend)
+- 🧾 Backend transaction logging
 
 ---
 
-### 🛠️ Admin Dashboard
-- 📊 Real-time system analytics
-- 🧾 Claim review & moderation
-- ⚙️ Governance execution (approve/reject claims)
+### 🛠️ Admin Features
+- 📊 Dashboard with live stats
+- 🧾 Claim moderation (approve/reject)
+- ⚙️ Execute payouts
 - 👥 Membership tracking
-- 🔍 Active covers monitoring
-- 📤 CSV export & search tools
+- 🔍 Search & filter tools
 
 ---
 
 ## 🧠 Architecture Overview
 
-```
+```mermaid
+flowchart TD
 
-Frontend (HTML/CSS/JS)
-↓
-new-app.js (Lucid SDK)
-↓
-Plutus Smart Contracts (Cardano)
-↓
-Backend (PHP API + MySQL)
-↓
-Admin Dashboard
+A[User Wallet (Lace)] --> B[Frontend UI]
+B --> C[new-app.js (Lucid SDK)]
+C --> D[Cardano Blockchain]
 
+D --> E[Insurance Smart Contract]
+D --> F[Pool Smart Contract]
+D --> G[Doc Vault Contract]
+
+B --> H[PHP Backend API]
+H --> I[MySQL Database]
+
+I --> J[Users Table]
+I --> K[Cover Purchases]
+I --> L[Claim Documents]
+I --> M[Insurance Transactions]
+I --> N[Admin Claim Reviews]
+
+H --> O[Admin Dashboard]
+
+O --> H
 ````
 
 ---
@@ -66,64 +75,72 @@ Admin Dashboard
 ## ⚙️ Tech Stack
 
 ### 🔗 Blockchain
-- Cardano
-- Plutus (Smart Contracts)
-- Lucid (JS SDK)
+
+* Cardano
+* Plutus Smart Contracts
+* Lucid (JavaScript SDK)
 
 ### 🌐 Frontend
-- HTML5
-- CSS3 (Custom UI system)
-- Vanilla JavaScript
+
+* HTML
+* CSS
+* Vanilla JavaScript
 
 ### 🖥️ Backend
-- PHP (REST APIs)
-- MySQL (Database)
+
+* PHP
+* MySQL
 
 ---
 
-## 🗄️ Database Overview
+## 🗄️ Database Structure
 
-Core tables:
-- `users` → Registered wallets
-- `cover_purchases` → Active insurance covers
-- `claim_documents` → Uploaded claim evidence
-- `claim_descriptions` → Claim metadata
-- `insurance_transactions` → All protocol transactions
-- `admin_claim_reviews` → Governance decisions
-- `admins` → Admin authentication
+Core tables include:
+
+* `users`
+* `cover_purchases`
+* `claim_documents`
+* `claim_descriptions`
+* `insurance_transactions`
+* `admin_claim_reviews`
+* `admins`
 
 ---
 
 ## 🔄 Core Workflow
 
 ### 🛡️ Buy Cover
-1. User connects wallet
-2. Selects coverage plan
-3. Pays premium → deposited into pool
+
+1. Connect wallet
+2. Select coverage
+3. Pay premium
 4. Cover stored in backend
 
 ---
 
 ### 📄 Submit Claim
+
 1. Upload document
 2. Add description
-3. Claim stored + tokenized
-4. Appears in governance queue
+3. Claim recorded
+4. Sent to governance
 
 ---
 
 ### 🗳️ Governance
-1. Members vote on claim
+
+1. Members vote
 2. Threshold reached
 3. Claim becomes executable
 
 ---
 
 ### 💸 Execute Claim
-1. Admin executes via smart contract
-2. Funds released from pool
+
+1. Admin executes claim
+2. Smart contract releases funds
 3. Transaction logged
-4. Status updated across system
+4. Status updated
 
 ---
 
@@ -132,27 +149,13 @@ Core tables:
 ```bash
 git clone https://github.com/your-username/coxyinsure.git
 cd coxyinsure
-````
-
-### Backend Setup
-
-* Configure database in `db.php`
-* Import SQL schema
-* Ensure PHP server is running
-
-### Frontend
-
-* Open `index.html` or `main.html`
-* Connect wallet
-* Start interacting
+```
 
 ---
 
 ## 🔐 Environment Variables
 
-Example:
-
-```
+```env
 BLOCKFROST_URL=your_blockfrost_url
 BLOCKFROST_KEY=your_api_key
 NETWORK=Preprod
@@ -162,7 +165,7 @@ NETWORK=Preprod
 
 ## 📊 Admin Access
 
-* Navigate to `/admin-dashboard.php`
+* Open: `/admin-dashboard.php`
 * Login with admin credentials
 * Manage claims, covers, and governance
 
@@ -173,23 +176,23 @@ NETWORK=Preprod
 You can test with:
 
 * Sample claim documents
-* Mock wallets
-* Local blockchain (or testnet)
+* Test wallets
+* Cardano testnet
 
 ---
 
-## ⚠️ Security Notes
+## ⚠️ Security
 
-* All claims require **governance validation**
-* Only authorized signers can execute payouts
-* Wallet binding ensures user identity consistency
-* Backend enforces admin roles and CSRF protection
+* Claims require governance approval
+* Only authorized signers execute payouts
+* Wallet binding enforced
+* Admin actions protected with CSRF
 
 ---
 
 ## 📸 Screenshots
 
-> *(Add screenshots here)*
+Add screenshots here:
 
 ```
 /docs/screenshots/dashboard.png
@@ -202,19 +205,16 @@ You can test with:
 ## 🛣️ Roadmap
 
 * [ ] Multi-signature execution
-* [ ] Risk scoring engine
-* [ ] Automated claim validation (AI)
-* [ ] Mobile responsive UI
-* [ ] Cross-chain insurance support
+* [ ] Risk scoring system
+* [ ] Automated claim validation
+* [ ] Mobile UI improvements
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome. For major changes:
-
-* Open an issue first
-* Discuss what you want to change
+Pull requests are welcome.
+Open an issue for major changes.
 
 ---
 
@@ -224,19 +224,13 @@ MIT License
 
 ---
 
-## ✨ Acknowledgements
-
-* Cardano Ecosystem
-* Plutus Developers
-* Lucid SDK Contributors
-
----
-
 ## 👑 Author
 
 **Coxygen Global**
 
 > Building decentralized financial protection systems 🚀
 
-```
+````
+
+
 
