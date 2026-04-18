@@ -1,8 +1,3 @@
-Here’s a **clean, copy-paste ready `README.md`** with a proper **Mermaid architectural diagram included** 👇
-
----
-
-````md
 # 🛡️ CoxyInsure — Decentralized Insurance Protocol
 
 CoxyInsure is a **DeFi insurance dApp on Cardano** that allows users to:
@@ -68,7 +63,6 @@ I --> N[Admin Claim Reviews]
 H --> O[Admin Dashboard]
 
 O --> H
-````
 
 ---
 
