@@ -42,27 +42,25 @@ CoxyInsure is a **DeFi insurance dApp on Cardano** that allows users to:
 
 ```mermaid
 flowchart TD
+    A["User Wallet (Lace)"] --> B["Frontend UI"]
+    B --> C["new-app.js (Lucid SDK)"]
+    C --> D["Cardano Blockchain"]
 
-A[User Wallet (Lace)] --> B[Frontend UI]
-B --> C[new-app.js (Lucid SDK)]
-C --> D[Cardano Blockchain]
+    D --> E["Insurance Smart Contract"]
+    D --> F["Pool Smart Contract"]
+    D --> G["Doc Vault Contract"]
 
-D --> E[Insurance Smart Contract]
-D --> F[Pool Smart Contract]
-D --> G[Doc Vault Contract]
+    B --> H["PHP Backend API"]
+    H --> I["MySQL Database"]
 
-B --> H[PHP Backend API]
-H --> I[MySQL Database]
+    I --> J["Users Table"]
+    I --> K["Cover Purchases"]
+    I --> L["Claim Documents"]
+    I --> M["Insurance Transactions"]
+    I --> N["Admin Claim Reviews"]
 
-I --> J[Users Table]
-I --> K[Cover Purchases]
-I --> L[Claim Documents]
-I --> M[Insurance Transactions]
-I --> N[Admin Claim Reviews]
-
-H --> O[Admin Dashboard]
-
-O --> H
+    H --> O["Admin Dashboard"]
+    O --> H
 ```
 
 ---
@@ -224,8 +222,3 @@ MIT License
 **Coxygen Global**
 
 > Building decentralized financial protection systems 🚀
-
-````
-
-
-
